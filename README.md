@@ -19,10 +19,26 @@ Make sure the following are installed on your machine before proceeding:
 
 | Tool | Version | Download |
 |------|---------|----------|
-| Node.js | v18 or higher | https://nodejs.org |
+| Node.js | v20 to avoid issue | https://nodejs.org |
+| NVM | Latest | https://www.nvmnode.com/guide/download.html |
 | Meteor.js | Latest | https://www.meteor.com/install |
 | Git | Latest | https://git-scm.com |
-| MongoDB | v6+ (optional, Meteor includes it) | https://www.mongodb.com |
+
+---
+
+### Step 0 — Install node 20 using nvm in terminal
+
+```bash
+nvm install 20
+nvm use 20
+```
+
+Verify installation:
+```bash
+node -v
+```
+
+- It should output something like v20.x.x.
 
 ---
 
@@ -45,7 +61,11 @@ curl https://install.meteor.com/ | sh
 ```
 
 **For Windows:**  
-Download and run the installer from: https://www.meteor.com/install
+
+Installation in terminal:
+```bash
+npx meteor
+```
 
 Verify installation:
 ```bash
@@ -57,7 +77,7 @@ meteor --version
 ### Step 3 — Install Node Dependencies
 
 ```bash
-npm install
+meteor npm install
 ```
 
 > If you encounter permission errors on macOS/Linux, use `sudo npm install`.
@@ -79,7 +99,7 @@ http://localhost:3000
 
 | Tool | 
 |------|
-| **Claude (Anthropic)** |
+| **Claude (Sonnet)** |
 
 ---
 
@@ -100,121 +120,123 @@ I am tasked to create these using the framework meteorjs. Can you make all the p
 
 ### Screenshot 1 — Sign Up Page
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/efc34987-eec1-40c5-87b8-c0ace988c9cc" />
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/e65f0e7f-4d5c-44f7-a034-ef552816b4fb" />
 
 ---
 
 ### Screenshot 2 — Login Page
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5c350a35-960d-444d-b0b6-0584bb02b5bc" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/cf704ae7-8857-4219-8bba-025b3d84147c" />
 
 ---
 
 ### Screenshot 3 — Forgot Password Page
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/94d3e71a-c517-492f-9a60-b7e01fb114e3" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/a6c935cb-e4dc-45de-bbab-b6a52828d5dd" />
 
 ---
 
-### Screenshot 4 — Role Selection if student admin logged in
+### Screenshot 4 — Login Password Successfully Reset
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6da281f3-bc46-4c7c-8758-c313678232b7" />
-
----
-
-### Screenshot 5 — Admin Home
-
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d8a92b8e-24a4-436b-a053-25c723c6ab13" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ea763ead-9aa0-4fc8-8ade-6aab47aa921e" />
 
 ---
 
-### Screenshot 6 — Admin Donation Campaigns
+### Screenshot 5 — Role Selection if student admin logged in
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f85ec366-d524-4bd4-ade4-a32334db2f2d" />
-
----
-
-### Screenshot 7 — Admin Create Campaign/Donation
-
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9160ed14-f461-499a-b38b-1ab0747f1235" />
+<img width="1919" height="1122" alt="image" src="https://github.com/user-attachments/assets/62e36102-d398-4e59-8f24-1a681ffe959d" />
 
 ---
 
-### Screenshot 8 — Batch Donation Leaderboard
+### Screenshot 6 — Admin Home
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/afedfa93-5796-40a7-b608-b9a8223566b9" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/835f48a0-92ab-4e4e-97fa-abd1806367ce" />
 
 ---
 
-### Screenshot 9 — Admin Create Campaign/Donation
+### Screenshot 7 — Admin Donation Campaigns
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9160ed14-f461-499a-b38b-1ab0747f1235" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/05ac0000-1285-46c2-a4b6-da8d2e6ef8fc" />
+
+---
+
+### Screenshot 8 — Admin Create Campaign/Donation
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/94f6779b-65d8-4619-8dee-c3566c95479d" />
+
+---
+
+### Screenshot 9 — Batch Donation Leaderboard
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6a9df399-32af-430e-bd29-95bdc33c8696" />
 
 ---
 
 ### Screenshot 10 — Alumni Home
 
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/c6ebb6c6-38c6-49a1-ad31-10f339ccfb75" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/78c0d577-18be-406d-916a-2612c5310093" />
 
 ---
 
 ### Screenshot 11 — Alumni Calendar of Events
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e34c3f23-e100-4244-922e-7018d54c0e9f" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3b745eaf-b3dd-4532-af75-265243d2bdab" />
 
 ---
 
 ### Screenshot 12 — Alumni Events List View
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/46f65fe6-2429-4b05-95c2-e651c10a7e03" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/28910011-932b-490e-bfb4-f876cfbe0c2a" />
 
 ---
 
 ### Screenshot 13 — Alumni Donating for a Cause Page
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/80d00d9e-98ae-438c-b5ec-88bc8411625a" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b210cd45-ae57-4eef-bf40-b2de9911b051" />
 
 ---
 
 ### Screenshot 14 — Alumni Campaign Details
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6b59cb84-b8e7-4d2e-be86-ab9310250bfc" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d63a953a-c6e2-477b-9ed6-491dc1cbf879" />
 
 ---
 
 ### Screenshot 15 — Alumni Donation Secure Checkout
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dda99b10-8c27-44a1-b8cc-5f65478d4ff3" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ee24f1e1-e9f7-4099-8f49-baac0eca0585" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/49eb8fc5-6c54-4fcd-b855-47b5040862f2" />
 
 ---
 
 ### Screenshot 16 — Alumni Donation History
 
-<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/3ec9250b-500f-4f7d-bd4f-3f6db9828e65" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d49863eb-18ea-449a-87d1-b52d3860d705" />
 
 ---
 
 ### Screenshot 17 — Alumni Notifications Center
 
-<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/9ab368df-3050-4e64-a97f-8b32571de462" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/65012576-fb15-4e72-8fd1-8455c358ba30" />
 
 ---
 
 ### Screenshot 18 — Alumni Profile Overview
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/822b0558-6b5a-481f-944d-ac0e92a3bf72" />
+<img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/09e3c5cd-141c-4f7c-ae1b-ef2ff3a16b72" />
 
 ---
 
 ### Screenshot 19 — Alumni Profile Edit & Credentials
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e5184650-9d9c-4b53-941b-9748c8c682c4" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/aebb4282-f04e-4691-bbcf-0edbac245bd2" />
 
 ---
 
 ### Screenshot 20 — Alumni Certificate Vault
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9c66c54a-e24a-4391-8c12-3fe9f891d113" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/23c7cd55-6250-47d7-9c49-0a88360a2552" />
 
 ---
 
