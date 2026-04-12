@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export default function MobileShell({ children, noPadBottom = false }) {
   return (
-    <div className="min-h-screen bg-slate-100 flex justify-center">
-      <div className={`w-full max-w-md bg-slate-50 min-h-screen relative flex flex-col ${noPadBottom ? '' : 'pb-16'} overflow-x-hidden`}>
+    <div className="h-screen bg-slate-100 flex justify-center overflow-hidden">
+      <div className="w-full max-w-md bg-slate-50 h-full flex flex-col overflow-hidden">
         {children}
       </div>
     </div>

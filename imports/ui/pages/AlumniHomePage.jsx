@@ -131,15 +131,6 @@ export default function AlumniHomePage() {
         </div>
       </div>
 
-      {/* Quick Links */}
-      <div className="px-4 mt-4 mb-2">
-        <button
-          onClick={() => navigate("/leaderboard")}
-          className="w-full bg-brand-50 border border-brand-200 text-brand-700 font-semibold py-3 rounded-xl text-sm hover:bg-brand-100 transition-colors"
-        >
-          🏆 View Batch Leaderboard
-        </button>
-      </div>
 
       <BottomNav />
     </MobileShell>

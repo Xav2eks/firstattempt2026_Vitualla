@@ -1,19 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Meteor } from "meteor/meteor"; // Import Meteor for the logout function
 import MobileShell from "../components/MobileShell.jsx";
 import AdminBottomNav from "../components/AdminBottomNav.jsx";
 
-const StatCard = ({ icon, label, value, sub, color }) => (
-  <div className="bg-admin-800/60 rounded-2xl p-4 border border-admin-700">
-    <span className={`text-2xl ${color || ""}`}>{icon}</span>
-    <p className={`font-black text-xl mt-2 ${color || "text-white"}`}>
+const StatCard = ({ icon, label, value, color }) => (
+  <div className="bg-white rounded-2xl p-4 border border-purple-100 shadow-sm">
+    <span className="text-2xl">{icon}</span>
+    <p className={`font-black text-lg mt-2 ${color || "text-gray-800"}`}>
       {value}
     </p>
-    <p className="text-admin-300 text-xs uppercase tracking-wide font-semibold mt-0.5">
+    <p className="text-gray-400 text-[9px] uppercase tracking-wide font-semibold mt-0.5">
       {label}
     </p>
-    {sub && <p className="text-admin-400 text-[10px] mt-0.5">{sub}</p>}
   </div>
 );
 
@@ -26,7 +24,7 @@ const newsItems = [
   {
     title: "Scholarship Goal",
     date: "OCT 12, 2024",
-    color: "from-gray-600 to-gray-900",
+    color: "from-gray-500 to-gray-900",
   },
 ];
 
@@ -35,16 +33,15 @@ export default function AdminHomePage() {
 
   return (
     <MobileShell>
-      {/* Admin Header */}
-      <div className="bg-gradient-to-br from-admin-900 via-admin-800 to-admin-700 px-5 py-5">
-        {/* Wrapper changed to justify-between to push Logout to the right */}
-        <div className="flex items-start justify-between">
+      {/* ── HEADER ── */}
+      <div className="bg-gradient-to-br from-admin-900 to-admin-700 px-5 py-5">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-full bg-admin-500 border-2 border-white/30 flex items-center justify-center text-white font-black text-xl flex-shrink-0">
+            <div className="w-14 h-14 rounded-full bg-violet-400 border-2 border-white/30 flex items-center justify-center text-white font-black text-xl flex-shrink-0">
               MB
             </div>
             <div>
-              <p className="text-admin-300 text-xs font-medium uppercase tracking-wide">
+              <p className="text-white/70 text-xs font-medium uppercase tracking-wide">
                 Welcome, Admin!
               </p>
               <p className="text-white font-black text-lg leading-tight">
@@ -52,110 +49,101 @@ export default function AdminHomePage() {
               </p>
             </div>
           </div>
-
-          {/* Logout Button added here */}
           <button
             onClick={() => navigate("/login")}
-            className="text-red-500 font-bold text-sm bg-white/10 px-3 py-1 rounded-lg hover:bg-white/20 transition-colors mt-1"
+            className="text-red-400 font-bold text-xs bg-white/10 px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors"
           >
-            LOGOUT
+            LOG OUT
           </button>
         </div>
-
-        {/* Create Donation CTA */}
-        <button
-          onClick={() => navigate("/admin/campaigns/create")}
-          className="w-full mt-4 bg-white/15 hover:bg-white/25 backdrop-blur border border-white/20 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
-        >
-          + Create Donation
-        </button>
       </div>
 
-      {/* Stats */}
-      <div className="bg-gradient-to-b from-admin-800 to-admin-900 px-4 pt-4 pb-5">
-        <div className="grid grid-cols-2 gap-3">
-          <StatCard
-            icon="💰"
-            label="Total Funds Raised"
-            value="₱12,500.00"
-            color="text-green-400"
-          />
-          <StatCard
-            icon="🎓"
-            label="Scholar Supported"
-            value="400 Students"
-            color="text-sky-400"
-          />
-          <div className="bg-admin-800/60 rounded-2xl p-4 border border-admin-700">
-            <span className="text-2xl">📈</span>
-            <p className="text-admin-300 text-xs uppercase tracking-wide font-semibold mt-2">
-              Active Campaigns
-            </p>
-            <div className="mt-2 bg-admin-700 rounded-full h-2">
-              <div
-                className="bg-green-400 h-2 rounded-full"
-                style={{ width: "75%" }}
-              />
-            </div>
-            <p className="text-white font-bold text-sm mt-1">75%</p>
-          </div>
-          <StatCard
-            icon="📊"
-            label="Batch Ranking"
-            value="#3 Top Class"
-            color="text-admin-300"
-          />
-        </div>
-      </div>
-
-      {/* ... Rest of your code remains the same ... */}
-      <div className="px-4 pt-4 pb-2">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="font-bold text-gray-900 text-base">Latest News</h2>
-          <button className="text-brand-700 text-sm font-semibold hover:underline">
-            See all
-          </button>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          {newsItems.map((item, i) => (
-            <button
-              key={i}
-              className="rounded-2xl overflow-hidden shadow-sm aspect-[4/3]"
-            >
-              <div
-                className={`w-full h-full bg-gradient-to-br ${item.color} flex flex-col justify-end p-3`}
-              >
-                <p className="text-white font-semibold text-xs leading-tight text-left">
-                  {item.title}
-                </p>
-                <p className="text-white/70 text-[10px] mt-0.5 text-left">
-                  {item.date}
-                </p>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="px-4 py-3 grid grid-cols-3 gap-3">
-        {[
-          { label: "Campaigns", icon: "📋", path: "/admin/campaigns" },
-          { label: "Leaderboard", icon: "🏆", path: "/leaderboard" },
-          { label: "Notifications", icon: "🔔", path: "/admin/notifications" },
-        ].map((a, i) => (
+      {/* ── SCROLLABLE BODY ── */}
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        <div className="bg-gradient-to-b from-white via-purple-50 to-purple-100 min-h-full px-4 pt-5 pb-6 flex flex-col gap-4">
+          {/* Create Donation */}
           <button
-            key={i}
-            onClick={() => navigate(a.path)}
-            className="flex flex-col items-center gap-1.5 bg-white rounded-2xl py-3 shadow-sm border border-gray-100 hover:border-brand-200 transition-all"
+            onClick={() => navigate("/admin/campaigns/create")}
+            className="w-full bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-700 hover:to-violet-600 text-white font-bold py-4 rounded-2xl transition-all text-sm tracking-wide shadow-md shadow-indigo-200"
           >
-            <span className="text-2xl">{a.icon}</span>
-            <span className="text-xs font-semibold text-gray-600">
-              {a.label}
-            </span>
+            + Create Donation
           </button>
-        ))}
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            <StatCard
+              icon="💰"
+              label="Total Funds Raised"
+              value="₱12,500.00"
+              color="text-green-500"
+            />
+            <StatCard
+              icon="🎓"
+              label="Scholar Supported"
+              value="400 Students"
+              color="text-sky-500"
+            />
+            <div className="bg-white rounded-2xl p-4 border border-purple-100 shadow-sm">
+              <span className="text-2xl">📈</span>
+              <p className="text-gray-400 text-[9px] uppercase tracking-wide font-semibold mt-2 mb-2">
+                Active Campaigns
+              </p>
+              <div className="bg-gray-100 rounded-full h-2">
+                <div
+                  className="bg-green-400 h-2 rounded-full"
+                  style={{ width: "75%" }}
+                />
+              </div>
+              <p className="text-gray-800 font-bold text-sm mt-1.5">75%</p>
+            </div>
+            <StatCard
+              icon="📊"
+              label="Batch Ranking"
+              value="#3 Top Class"
+              color="text-indigo-500"
+            />
+          </div>
+
+          {/* Latest News */}
+          <div className="bg-white/60 rounded-2xl p-4 border border-purple-100">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="font-bold text-indigo-900 text-sm">Latest News</h2>
+              <button className="text-indigo-600 text-xs font-semibold hover:underline">
+                See all
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {newsItems.map((item, i) => (
+                <button
+                  key={i}
+                  className="rounded-2xl overflow-hidden shadow-sm aspect-[4/3]"
+                >
+                  <div
+                    className={`w-full h-full bg-gradient-to-br ${item.color} flex flex-col justify-end p-3`}
+                  >
+                    <p className="text-white font-semibold text-[10px] leading-tight text-left">
+                      {item.title}
+                    </p>
+                    <p className="text-white/70 text-[9px] mt-0.5 text-left">
+                      {item.date}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="px-4 mb-2">
+            <button
+              onClick={() => navigate("/leaderboard")}
+              className="w-full bg-brand-50 border border-admin-200 text-admin-700 font-semibold py-3 rounded-xl text-sm hover:bg-brand-100 transition-colors"
+            >
+              🏆 View Batch Leaderboard
+            </button>
+          </div>
+        </div>
       </div>
 
+      {/* ── BOTTOM NAV ── */}
       <AdminBottomNav />
     </MobileShell>
   );
