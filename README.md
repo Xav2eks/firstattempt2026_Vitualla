@@ -32,7 +32,7 @@ Open your terminal and run:
 
 ```bash
 git clone https://github.com/Xav2eks/firstattempt2026_Vitualla.git
-cd [firstattempt2026_Vitualla]
+cd firstattempt2026_Vitualla
 ```
 
 ---
@@ -77,9 +77,9 @@ http://localhost:3000
 
 ## 🤖 AI Tools Used
 
-| Tool | Purpose |
-|------|---------|
-| **Claude (Anthropic)** | UI component generation, layout fixes, code debugging |
+| Tool | 
+|------|
+| **Claude (Anthropic)** |
 
 ---
 
