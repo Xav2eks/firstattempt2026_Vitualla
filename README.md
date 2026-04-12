@@ -99,7 +99,7 @@ http://localhost:3000
 
 | Tool | 
 |------|
-| **Claude (Anthropic)** |
+| **Claude (Sonnet)** |
 
 ---
 
