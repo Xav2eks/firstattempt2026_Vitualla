@@ -24,7 +24,7 @@ export default function EventsCalendarPage() {
       <TopBar title="Events Calendar" backPath="/home" rightIcon="☰" />
 
       {/* View Toggle */}
-      <div className="bg-brand-800 px-4 pb-4">
+      <div className="bg-brand-800 px-4 p-4">
         <div className="flex bg-brand-700/60 rounded-xl p-1">
           {['calendar','list'].map(v => (
             <button

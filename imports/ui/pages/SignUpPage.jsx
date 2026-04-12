@@ -9,21 +9,20 @@ export default function SignUpPage() {
 
   return (
     <MobileShell noPadBottom>
-      <div className="flex flex-col min-h-screen bg-gradient-to-b from-brand-50 via-blue-50 to-slate-100">
+      <div className="flex flex-col min-h-screen bg-slate-50">
         {/* Header */}
-        <div className="px-6 pt-12 pb-10 flex flex-col items-center">
-          {/* Logo */}
-          <div className="w-28 h-28 mb-6">
+        <div className="bg-gradient-to-br from-brand-900 to-brand-700 px-6 pt-12 pb-10 flex flex-col items-center">
+          {/* Logo placeholder */}
+          <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4 shadow-lg">
             <img
               src="https://www.addu.edu.ph/wp-content/uploads/2020/08/UniversitySeal240px.png"
-              alt="Ateneo logo"
-              className="w-full h-full object-contain drop-shadow-xl"
+              alt="Ateneo Logo"
             />
           </div>
-          <h1 className="text-black text-2xl font-bold">
+          <h1 className="text-white text-2xl font-bold">
             Welcome, Blue Knight
           </h1>
-          <p className="text-gray-600 text-sm mt-1">AdDU Alumni Portal</p>
+          <p className="text-brand-200 text-sm mt-1">AdDU Alumni Portal</p>
         </div>
 
         {/* Form */}

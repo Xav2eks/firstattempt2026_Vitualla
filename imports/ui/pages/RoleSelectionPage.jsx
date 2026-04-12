@@ -10,11 +10,10 @@ export default function RoleSelectionPage() {
       <div className="flex flex-col min-h-screen bg-slate-50 px-6 py-10">
         {/* Logo */}
         <div className="flex flex-col items-center mb-10">
-          <div className="w-28 h-28 mb-6">
+          <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4 shadow-lg">
             <img
               src="https://www.addu.edu.ph/wp-content/uploads/2020/08/UniversitySeal240px.png"
-              alt="Ateneo logo"
-              className="w-full h-full object-contain drop-shadow-xl"
+              alt="Ateneo Logo"
             />
           </div>
           <h1 className="text-3xl font-bold text-gray-900">
@@ -67,7 +66,7 @@ export default function RoleSelectionPage() {
         {/* Help */}
         <div className="text-center mb-6">
           <button className="text-brand-700 font-semibold text-sm hover:underline flex items-center gap-1.5 mx-auto">
-            <span>?</span> Need help or support?
+            <span>❓</span> Need help or support?
           </button>
         </div>
 

@@ -1,0 +1,89 @@
+/*
+ * desktop-overrides.css
+ * Add this @import into main.css (or import it in main.jsx).
+ *
+ * These rules make existing page components look good on the
+ * wide desktop canvas without touching every page file.
+ */
+
+@media (min-width: 1024px) {
+  /* ── Grid pages ──────────────────────────────────────────────
+   * Pages that have a 2-column news grid or stats grid:
+   * allow them to expand to more columns at desktop widths.
+   */
+  .desktop-page-content .grid.grid-cols-2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* 3-column stat grid can go 4-up on desktop */
+  .desktop-page-content .grid.grid-cols-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* ── Campaign / card lists ──────────────────────────────────
+   * Single-column card lists become 2-column on desktop.
+   */
+  .desktop-page-content .space-y-3 > .w-full.bg-white.rounded-2xl {
+    display: inline-block; /* let flex parent do the work */
+  }
+
+  /* ── Hide mobile-only navs on desktop ───────────────────────
+   * BottomNav and AdminBottomNav are already hidden via
+   * their own responsive classes; belt-and-suspenders here.
+   */
+  .desktop-page-content nav.fixed.bottom-0 {
+    display: none !important;
+  }
+
+  /* ── TopBar (back-button bar) — hide on desktop ─────────────
+   * DesktopTopBar replaces it at lg+.
+   */
+  .desktop-page-content .sticky.top-0.z-40:not(header) {
+    display: none;
+  }
+
+  /* ── Hero banners — let them breathe ───────────────────────── */
+  .desktop-page-content .w-full.h-64 {
+    height: 320px;
+  }
+
+  /* ── Campaign list → 2-col grid on desktop ──────────────────
+   * Targets the wrapping div in AdminCampaignsPage / similar.
+   */
+  .desktop-page-content .space-y-3.pb-4 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  /* ── Notifications list → 2-col on desktop ───────────────── */
+  .desktop-page-content .space-y-5 > div > .space-y-3 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  /* ── Certificate list → 2-col on desktop ────────────────── */
+  .desktop-page-content .space-y-4 > .space-y-4 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  /* ── Fixed-bottom CTA → static on desktop ─────────────────
+   * "Donate Now" button is position:fixed on mobile; on desktop
+   * it should be static so it doesn't overlap the sidebar.
+   */
+  .desktop-page-content .fixed.bottom-0.left-1\/2 {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 1.5rem;
+  }
+
+  /* ── Podium in BatchLeaderboardPage — wider ─────────────── */
+  .desktop-page-content .flex.items-end.justify-center.gap-3 {
+    gap: 2rem;
+  }
+}

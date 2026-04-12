@@ -18,33 +18,34 @@ const StatCard = ({ icon, label, value, color }) => (
 export default function AlumniHomePage() {
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    // Clear any session/auth state here if needed
+    navigate("/login");
+  };
+
   return (
     <MobileShell>
       {/* Header */}
       <div className="bg-gradient-to-br from-brand-900 to-brand-600 px-5 py-5">
-        {/* Updated wrapper for justify-between */}
-        <div className="flex items-start justify-between mb-5">
-          <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-full bg-brand-300 border-2 border-white/40 flex items-center justify-center text-brand-900 font-bold text-xl flex-shrink-0">
-              SL
-            </div>
-            <div>
-              <p className="text-brand-200 text-xs font-medium">
-                Welcome, Atenean!
-              </p>
-              <p className="text-white font-bold text-lg leading-tight">
-                Sophia Laforteza
-              </p>
-              <p className="text-brand-300 text-xs">AB Communications '24</p>
-            </div>
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-14 h-14 rounded-full bg-brand-300 border-2 border-white/40 flex items-center justify-center text-brand-900 font-bold text-xl flex-shrink-0">
+            SL
           </div>
-
-          {/* New Logout Button */}
+          <div className="flex-1">
+            <p className="text-brand-200 text-xs font-medium">
+              Welcome, Atenean!
+            </p>
+            <p className="text-white font-bold text-lg leading-tight">
+              Sophia Laforteza
+            </p>
+            <p className="text-brand-300 text-xs">AB Communications '24</p>
+          </div>
+          {/* Logout button */}
           <button
-            onClick={() => navigate("/login")}
-            className="text-red-500 font-bold text-sm bg-white/10 px-3 py-1 rounded-lg hover:bg-white/20 transition-colors"
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold px-3 py-2 rounded-xl transition-colors flex-shrink-0"
           >
-            LOGOUT
+            <span>🚪</span> Log Out
           </button>
         </div>
 
@@ -131,6 +132,15 @@ export default function AlumniHomePage() {
         </div>
       </div>
 
+      {/* Quick Links */}
+      <div className="px-4 mt-4 mb-2">
+        <button
+          onClick={() => navigate("/leaderboard")}
+          className="w-full bg-brand-50 border border-brand-200 text-brand-700 font-semibold py-3 rounded-xl text-sm hover:bg-brand-100 transition-colors"
+        >
+          🏆 View Batch Leaderboard
+        </button>
+      </div>
 
       <BottomNav />
     </MobileShell>
