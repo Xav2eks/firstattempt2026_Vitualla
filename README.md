@@ -19,10 +19,26 @@ Make sure the following are installed on your machine before proceeding:
 
 | Tool | Version | Download |
 |------|---------|----------|
-| Node.js | v18 or higher | https://nodejs.org |
+| Node.js | v20 to avoid issue | https://nodejs.org |
+| NVM | Latest | [https://nodejs.org](https://www.nvmnode.com/guide/download.html) |
 | Meteor.js | Latest | https://www.meteor.com/install |
 | Git | Latest | https://git-scm.com |
-| MongoDB | v6+ (optional, Meteor includes it) | https://www.mongodb.com |
+
+---
+
+### Step 0 — Install node 20 using nvm in terminal
+
+```bash
+nvm install 20
+nvm use 20
+```
+
+Verify installation:
+```bash
+node -v
+```
+
+- It should output something like v20.x.x.
 
 ---
 
@@ -45,7 +61,11 @@ curl https://install.meteor.com/ | sh
 ```
 
 **For Windows:**  
-Download and run the installer from: https://www.meteor.com/install
+
+Installation in terminal:
+```bash
+npx meteor
+```
 
 Verify installation:
 ```bash
@@ -57,7 +77,7 @@ meteor --version
 ### Step 3 — Install Node Dependencies
 
 ```bash
-npm install
+meteor npm install
 ```
 
 > If you encounter permission errors on macOS/Linux, use `sudo npm install`.
