@@ -20,7 +20,7 @@ Make sure the following are installed on your machine before proceeding:
 | Tool | Version | Download |
 |------|---------|----------|
 | Node.js | v20 to avoid issue | https://nodejs.org |
-| NVM | Latest | [https://nodejs.org](https://www.nvmnode.com/guide/download.html) |
+| NVM | Latest | https://www.nvmnode.com/guide/download.html |
 | Meteor.js | Latest | https://www.meteor.com/install |
 | Git | Latest | https://git-scm.com |
 
