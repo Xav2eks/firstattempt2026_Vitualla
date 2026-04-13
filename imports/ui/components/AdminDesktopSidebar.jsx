@@ -22,8 +22,11 @@ export default function AdminDesktopSidebar() {
     <aside className="hidden lg:flex flex-col w-64 min-h-screen bg-admin-900 fixed left-0 top-0 z-50">
       {/* Logo */}
       <div className="flex items-center gap-3 px-6 py-6 border-b border-admin-700">
-        <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center flex-shrink-0">
-          <span className="text-admin-800 font-black text-sm">AdDU</span>
+        <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4 shadow-lg">
+          <img
+            src="https://www.addu.edu.ph/wp-content/uploads/2020/08/UniversitySeal240px.png"
+            alt="Ateneo Logo"
+          />
         </div>
         <div>
           <p className="text-white font-black text-sm leading-tight">
@@ -85,7 +88,7 @@ export default function AdminDesktopSidebar() {
         </button>
         <button
           onClick={() => navigate("/login")}
-          className="w-full text-admin-400 hover:text-red-400 font-medium py-2.5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 hover:bg-admin-800"
+          className="w-full bg-red-900 text-admin-400 hover:text-red-400 font-medium py-2.5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 hover:bg-admin-800"
         >
           <span>🚪</span> Log Out
         </button>

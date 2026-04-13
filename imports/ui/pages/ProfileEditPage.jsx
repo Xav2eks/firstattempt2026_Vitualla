@@ -1,13 +1,24 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import MobileShell from '../components/MobileShell.jsx';
-import TopBar from '../components/TopBar.jsx';
-import BottomNav from '../components/BottomNav.jsx';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import MobileShell from "../components/MobileShell.jsx";
+import TopBar from "../components/TopBar.jsx";
+import BottomNav from "../components/BottomNav.jsx";
 
 const contactDetails = [
-  { icon: '✉️', label: 'University Email',  value: 'sophia.laforteza@addu.edu.ph' },
-  { icon: '📞', label: 'Mobile Number',     value: '+63 917 123 4567' },
-  { icon: '📍', label: 'Current Location',  value: 'Davao City, Philippines' },
+  {
+    icon: "✉️",
+    label: "University Email",
+    value: "sophia.laforteza@addu.edu.ph",
+  },
+  { icon: "📞", label: "Mobile Number", value: "+63 917 123 4567" },
+  { icon: "📍", label: "Current Location", value: "Davao City, Philippines" },
+];
+
+const fields = [
+  { label: "First Name", value: "Sophia", type: "text" },
+  { label: "Last Name", value: "Laforteza", type: "text" },
+  { label: "Program", value: "AB Communications", type: "text" },
+  { label: "Batch Year", value: "2024", type: "text" },
 ];
 
 export default function ProfileEditPage() {
@@ -29,30 +40,33 @@ export default function ProfileEditPage() {
             </button>
           </div>
           <h1 className="text-xl font-black text-gray-900">Sophia Laforteza</h1>
-          <p className="text-brand-700 font-semibold text-sm mt-0.5">AB Communications, Batch 2024</p>
+          <p className="text-brand-700 font-semibold text-sm mt-0.5">
+            AB Communications, Batch 2024
+          </p>
           <p className="text-gray-400 text-xs mt-0.5 flex items-center gap-1">
             <span>🎓</span> Ateneo de Davao University
           </p>
         </div>
 
         {/* Edit Form */}
-        <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 space-y-4">
-          <h2 className="font-bold text-gray-800 text-sm">Personal Information</h2>
-          {[
-            { label: 'First Name',    value: 'Sophia',              type: 'text' },
-            { label: 'Last Name',     value: 'Laforteza',           type: 'text' },
-            { label: 'Program',       value: 'AB Communications',   type: 'text' },
-            { label: 'Batch Year',    value: '2024',                type: 'text' },
-          ].map((f, i) => (
-            <div key={i}>
-              <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">{f.label}</label>
-              <input
-                type={f.type}
-                defaultValue={f.value}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50"
-              />
-            </div>
-          ))}
+        <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+          <h2 className="font-bold text-gray-800 text-sm mb-4">
+            Personal Information
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {fields.map((f, i) => (
+              <div key={i}>
+                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">
+                  {f.label}
+                </label>
+                <input
+                  type={f.type}
+                  defaultValue={f.value}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Verified Digital Credential */}
@@ -62,9 +76,12 @@ export default function ProfileEditPage() {
               📄
             </div>
             <div className="flex-1">
-              <p className="font-bold text-gray-900 text-sm">Verified Digital Credential</p>
+              <p className="font-bold text-gray-900 text-sm">
+                Verified Digital Credential
+              </p>
               <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
-                Official PDF with secure QR verification containing your complete academic records and graduation honors.
+                Official PDF with secure QR verification containing your
+                complete academic records and graduation honors.
               </p>
             </div>
           </div>
@@ -81,12 +98,18 @@ export default function ProfileEditPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-100">
             {contactDetails.map((item, i) => (
               <div key={i} className="flex items-center gap-4 px-4 py-4">
-                <span className="text-xl w-7 text-center flex-shrink-0">{item.icon}</span>
+                <span className="text-xl w-7 text-center flex-shrink-0">
+                  {item.icon}
+                </span>
                 <div className="flex-1">
                   <p className="text-xs text-gray-400">{item.label}</p>
-                  <p className="font-semibold text-gray-900 text-sm mt-0.5">{item.value}</p>
+                  <p className="font-semibold text-gray-900 text-sm mt-0.5">
+                    {item.value}
+                  </p>
                 </div>
-                <button className="text-brand-600 text-xs font-semibold hover:underline">Edit</button>
+                <button className="text-brand-600 text-xs font-semibold hover:underline">
+                  Edit
+                </button>
               </div>
             ))}
           </div>
@@ -94,7 +117,7 @@ export default function ProfileEditPage() {
 
         {/* Save Button */}
         <button
-          onClick={() => navigate('/profile')}
+          onClick={() => navigate("/profile")}
           className="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-4 rounded-2xl text-sm shadow-md transition-colors"
         >
           Save Changes
