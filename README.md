@@ -208,9 +208,9 @@ I am tasked to create these using the framework meteorjs. Can you make all the p
 
 ### Screenshot 15 — Alumni Donation Secure Checkout
 
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/716716e0-80d8-4efb-973e-6c7285394b6c" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/bed690db-9df2-42ef-a9ef-a1683a486f40" />
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3923f970-7dc0-49bb-8af8-ebffba26d0b8" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d0af62d2-faf1-48ce-a75f-de59e5a43792" />
 
 ---
 
