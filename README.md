@@ -246,7 +246,33 @@ I am tasked to create these using the framework meteorjs. Can you make all the p
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/930dc9eb-1dcf-45ab-afca-4b5b1fc05008" />
 
+---
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9136a80d-8e55-4aed-91f7-adf62fb26d63" />
 
 ---
 
+# Master Prompt For PWA Ready
+
+System Role: You are a Senior Full-Stack Architect specializing in Meteor.js and React. We are upgrading this "AdDU Alumni Hub" into a high-performance Progressive Web App (PWA).
+Technical Context:
+
+Framework: Meteor.js (Uses its own build tool, not Vite/Webpack).
+Structure: Static assets MUST live in the /public folder to be served at the root.
+Entry Point: client/main.jsx and client/main.html.
+Branding: Ateneo de Davao colors (Primary Blue: #003366, Accent Gold: #FFD700).
+Logo URL: https://www.addu.edu.ph/wp-content/uploads/2020/08/UniversitySeal240px.png
+Requirements:
+
+public/manifest.json: Generate a manifest with standalone display, AdDU branding, and icon configurations (192x192 and 512x512) using the Logo URL provided.
+public/sw.js: Create a vanilla JavaScript Service Worker.
+Implement Cache-First for the University Seal and fonts.
+Implement Stale-While-Revalidate for the Meteor JS/CSS bundles (usually found in __meteor_runtime_config__ or standard bundle paths) to ensure the Alumni Hub loads instantly.
+Registration: Provide the navigator.serviceWorker.register code to be placed inside the Meteor.startup block in client/main.jsx.
+HTML Meta: List the specific <link> and <meta> tags I need to add to client/main.html to make the PWA "installable" on iOS and Android. Constraint: Do not suggest using workbox-build or vite-plugin-pwa. Provide raw, functional files that work with Meteor's standard /public directory serving logic.
+
+# AI Hallucinations
+
+- Not giving the correct expected filenames (from zipfile - icon generator)
+- Unclear instructions
+- Incomplete instructions
