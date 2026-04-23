@@ -1,9 +1,152 @@
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--
+    ═══════════════════════════════════════════════
+    VIEWPORT — critical for mobile rendering.
+    viewport-fit=cover lets the shell extend into
+    the iPhone notch / Dynamic Island area.
+    ═══════════════════════════════════════════════
+  -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
   <title>Alumni Hub – AdDU</title>
+
+  <!--
+    ═══════════════════════════════════════════════
+    PWA — Web App Manifest
+    Tells the browser this is installable.
+    ═══════════════════════════════════════════════
+  -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!--
+    ═══════════════════════════════════════════════
+    THEME COLOR
+    Controls the browser chrome / status bar tint.
+    Use the AdDU primary blue (#003366).
+    media queries let you set dark/light variants.
+    ═══════════════════════════════════════════════
+  -->
+  <meta name="theme-color" content="#003366" />
+  <meta
+    name="theme-color"
+    content="#003366"
+    media="(prefers-color-scheme: light)"
+  />
+  <meta
+    name="theme-color"
+    content="#001f3f"
+    media="(prefers-color-scheme: dark)"
+  />
+
+  <!--
+    ═══════════════════════════════════════════════
+    ANDROID — Chrome install prompt / TWA support
+    ═══════════════════════════════════════════════
+  -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="AlumniHub" />
+
+  <!--
+    ═══════════════════════════════════════════════
+    iOS (Safari / WKWebView)
+    These are Apple-proprietary tags; they still
+    matter for "Add to Home Screen" on iOS 16 and
+    below. iOS 17+ reads the manifest, but keep
+    these for backwards compatibility.
+    ═══════════════════════════════════════════════
+  -->
+  <!-- Enables standalone full-screen mode on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!--
+    Status bar style when running standalone.
+    Options:
+      default          → white status bar, black text
+      black            → black status bar
+      black-translucent → status bar overlaps content
+                          (combine with viewport-fit=cover)
+  -->
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  />
+
+  <!-- App name shown under the home screen icon on iOS -->
+  <meta name="apple-mobile-web-app-title" content="AlumniHub" />
+
+  <!--
+    iOS home screen icons.
+    Safari doesn't read manifest icons — you need
+    explicit <link rel="apple-touch-icon"> tags.
+
+    Serve these PNGs from public/icons/.
+    Generate them from the University Seal at:
+      https://www.addu.edu.ph/wp-content/uploads/2020/08/UniversitySeal240px.png
+
+    Recommended sizes (px):
+      180 — iPhone retina (most important)
+      167 — iPad Pro retina
+      152 — iPad retina
+      120 — iPhone non-retina (legacy)
+  -->
+  <link
+    rel="apple-touch-icon"
+    sizes="120x120"
+    href="/icons/apple-touch-icon.png"
+  />
+  <!-- Fallback for very old Safari — no sizes attribute -->
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180.png" />
+
+  <!--
+    iOS launch / splash screens (optional but polished).
+    These suppress the white flash between tap and app load.
+    Generate with: https://progressier.com/pwa-screenshots-and-ios-splash-screen-generator
+    Then add a <link> per device resolution. Example for iPhone 14 Pro:
+  -->
+  <!--
+  <link
+    rel="apple-touch-startup-image"
+    media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)"
+    href="/splash/iphone14pro.png"
+  />
+  -->
+
+  <!--
+    ═══════════════════════════════════════════════
+    STANDARD FAVICON + ICON
+    Browsers that don't support manifest will use
+    these as tab / bookmark icons.
+    ═══════════════════════════════════════════════
+  -->
+  <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- SVG favicon (modern browsers prefer this) -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" /> -->
+
+  <!--
+    ═══════════════════════════════════════════════
+    SEO / SOCIAL (not strictly PWA, but good practice)
+    ═══════════════════════════════════════════════
+  -->
+  <meta
+    name="description"
+    content="Ateneo de Davao University Alumni Hub – connect, donate, and celebrate with your fellow Blue Knights."
+  />
+  <meta name="robots" content="noindex" />
+  <!-- Private portal — don't index -->
+
+  <!--
+    Preconnect to origins used by the app to reduce
+    first-connection latency (fonts, logo CDN).
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.addu.edu.ph" />
 </head>
 
 <body>

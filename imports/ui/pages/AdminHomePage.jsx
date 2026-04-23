@@ -42,9 +42,11 @@ export default function AdminHomePage() {
       {/* Admin Header */}
       <div className="bg-gradient-to-br from-admin-900 via-admin-800 to-admin-700 px-5 py-5">
         <div className="flex items-center gap-3">
-          <div className="w-14 h-14 rounded-full bg-admin-500 border-2 border-white/30 flex items-center justify-center text-white font-black text-xl flex-shrink-0">
-            MB
-          </div>
+          <img
+            className="w-14 h-14 rounded-full bg-brand-300 border-2 border-white/40 flex items-center justify-center text-brand-900 font-bold text-xl flex-shrink-0"
+            src="https://image.tmdb.org/t/p/original/kzCHg5dkFLJNHwJG3tpj9ZEwPhR.jpg"
+            alt="Manon"
+          />
           <div className="flex-1">
             <p className="text-admin-300 text-xs font-medium uppercase tracking-wide">
               Welcome, Admin!

@@ -28,9 +28,12 @@ export default function AlumniHomePage() {
       {/* Header */}
       <div className="bg-gradient-to-br from-brand-900 to-brand-600 px-5 py-5">
         <div className="flex items-center gap-3 mb-5">
-          <div className="w-14 h-14 rounded-full bg-brand-300 border-2 border-white/40 flex items-center justify-center text-brand-900 font-bold text-xl flex-shrink-0">
-            SL
-          </div>
+          <img
+            className="w-14 h-14 rounded-full bg-brand-300 border-2 border-white/40 flex items-center justify-center text-brand-900 font-bold text-xl flex-shrink-0"
+            src="https://i.pinimg.com/736x/d7/88/07/d78807244747b4b2b2b9b628ab60cd7c.jpg"
+            alt="Sophia Laforteza"
+          />
+
           <div className="flex-1">
             <p className="text-brand-200 text-xs font-medium">
               Welcome, Atenean!
@@ -130,16 +133,6 @@ export default function AlumniHomePage() {
             </button>
           ))}
         </div>
-      </div>
-
-      {/* Quick Links */}
-      <div className="px-4 mt-4 mb-2">
-        <button
-          onClick={() => navigate("/leaderboard")}
-          className="w-full bg-brand-50 border border-brand-200 text-brand-700 font-semibold py-3 rounded-xl text-sm hover:bg-brand-100 transition-colors"
-        >
-          🏆 View Batch Leaderboard
-        </button>
       </div>
 
       <BottomNav />
